@@ -281,6 +281,7 @@ public class characterGui extends JFrame {
                 String intelligence = (String) intelTextField.getText();
                 String dexterity = (String) dexterityTextField.getText();
                 String will = (String) willTextField.getText();
+                String points = (String) apTextField.getText();
 
                 switch (charClass){
                     case "Guerrero":
@@ -363,6 +364,7 @@ public class characterGui extends JFrame {
                 characterObject.put("Intelligence", intelligence);
                 characterObject.put("Dexterity", dexterity);
                 characterObject.put("Will", will);
+                characterObject.put("Points",points);
 
                 // open save dialog
                 int result = fileChooser.showSaveDialog(characterGui.this);
@@ -406,6 +408,7 @@ public class characterGui extends JFrame {
                     String intelligence = (String)jsonObject.get("Intelligence");
                     String dexterity = (String)jsonObject.get("Dexterity");
                     String will = (String)jsonObject.get("Will");
+                    String points = (String)jsonObject.get("Points");
 
                     nameTextField.setText(name);
                     classBox.setSelectedItem(charClass);
@@ -413,6 +416,7 @@ public class characterGui extends JFrame {
                     intelTextField.setText(intelligence);
                     dexterityTextField.setText(dexterity);
                     willTextField.setText(will);
+                    apTextField.setText(points);
                 } catch(Exception e1) {
                     e1.printStackTrace();
                 }
@@ -438,6 +442,7 @@ public class characterGui extends JFrame {
                     String intelligence = (String)jsonObject.get("Intelligence");
                     String dexterity = (String)jsonObject.get("Dexterity");
                     String will = (String)jsonObject.get("Will");
+                    String points = (String)jsonObject.get("Points");
 
                     // Creating character to be cloned
                     CharacterPrototype originalCharacter = new Character(
@@ -457,6 +462,7 @@ public class characterGui extends JFrame {
                     intelTextField.setText(String.valueOf(cloned.getClonedIntel()));
                     dexterityTextField.setText(String.valueOf(cloned.getClonedDex()));
                     willTextField.setText(String.valueOf(cloned.getClonedWill()));
+                    apTextField.setText(points);
                 } catch(Exception e1) {
                     e1.printStackTrace();
                 }
